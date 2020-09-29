@@ -17,7 +17,7 @@ public class CasaDeEventos {
         this.fechaDelEvento = fechaDelEvento;
         this.tematica = tematica;
         this.disponibilidadElFindeSemana = disponibilidadElFindeSemana;
-    }
+    }    
     //El método me da a conocer el nombre del cliente que alquilará la 
     //casa de eventos
     public void nombredelCliente(){
