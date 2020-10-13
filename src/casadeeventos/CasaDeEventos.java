@@ -1,11 +1,12 @@
 package casadeeventos;
 
 public class CasaDeEventos {
-    private String nombre;
-    private int numeroDeInvitados;
-    private date fechaDelEvento;       
-    private String tematica;
-    private Boolean disponibilidadElFindeSemana;
+    private String nombre;// Este define el nombre de la casa de eventos //
+    private int numeroDeInvitados;// Este define la cantidad de invitados //
+    private date fechaDelEvento;// Este define el día del evento //       
+    private String tematica;// Este define la tematica de la fiesa que se manejara en la casa de eventos //
+    private Boolean disponibilidadElFindeSemana;// Este define si hay espacio los fines de semana //
+   // Aqui empieza el constructor // 
     public CasaDeEventos(
             String nombre, 
             int numeroDeInvitados, 
@@ -33,6 +34,7 @@ public class CasaDeEventos {
         this.tematica = boda;
         this.nombre = nombreCliente;
     }
+    //Aqui empieza el método get y set de mi proyecto//
     public String getNombre() {
         return nombre;
     }
