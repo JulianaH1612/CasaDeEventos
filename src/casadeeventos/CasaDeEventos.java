@@ -6,7 +6,13 @@ public class CasaDeEventos {
     private date fechaDelEvento;// Este define el día del evento //       
     private String tematica;// Este define la tematica de la fiesa que se manejara en la casa de eventos //
     private Boolean disponibilidadElFindeSemana;// Este define si hay espacio los fines de semana //
-   // Aqui empieza el constructor // 
+  
+  //Atributos de composición y agregación//
+    
+    private Baños bañoSocial = null;
+    private Personal personalDeServicio;
+    
+// Aqui empieza el constructor // 
     public CasaDeEventos(
             String nombre, 
             int numeroDeInvitados, 
@@ -18,6 +24,7 @@ public class CasaDeEventos {
         this.fechaDelEvento = fechaDelEvento;
         this.tematica = tematica;
         this.disponibilidadElFindeSemana = disponibilidadElFindeSemana;
+        this.bañoSocial = new Baños(" Masculino-Femenino ",true);
     }    
     //El método me da a conocer el nombre del cliente que alquilará la 
     //casa de eventos
@@ -38,6 +45,24 @@ public class CasaDeEventos {
     public String getNombre() {
         return nombre;
     }
+
+    public Baños getBañoSocial() {
+        return bañoSocial;
+    }
+
+    public void setBañoSocial(Baños bañoSocial) {
+        this.bañoSocial = bañoSocial;
+    }
+
+    public Personal getPersonalDeServicio() {
+        return personalDeServicio;
+    }
+
+    public void setPersonalDeServicio(Personal personalDeServicio) {
+        this.personalDeServicio = personalDeServicio;
+    }
+    
+    
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
@@ -72,35 +97,14 @@ public class CasaDeEventos {
                new date(),
                "boda",
                false);
-       CasaDeEventos CasadeEventosDos = new CasaDeEventos(
-               "Ramón",
-               120,
-               new date(),
-               "grado",
-               true);
        
-        System.out.println(CasadeEventosUno.getNumeroDeInvitados());
-        System.out.println(CasadeEventosUno.getDisponibilidadElFindeSemana());
-        System.out.println(CasadeEventosUno.getTematica());
-        System.out.println(CasadeEventosUno.getNombre());
-       
-        CasadeEventosUno.nombredelCliente();
+        Baños bañosDelEvento = new Baños(" Masculino-Femenino ",true);
         
-        System.out.println(CasadeEventosUno.getNumeroDeInvitados());
-        System.out.println(CasadeEventosUno.getDisponibilidadElFindeSemana());
-        System.out.println(CasadeEventosUno.getTematica());
-        System.out.println(CasadeEventosUno.getNombre());
+        CasadeEventosUno.setBañoSocial(bañosDelEvento);
         
-        System.out.println(CasadeEventosDos.getNumeroDeInvitados());
-        System.out.println(CasadeEventosDos.getDisponibilidadElFindeSemana());
-        System.out.println(CasadeEventosDos.getTematica());
-        System.out.println(CasadeEventosDos.getNombre());
-        
-        CasadeEventosDos.nombredelCliente();
-        
-        System.out.println(CasadeEventosDos.getNumeroDeInvitados());
-        System.out.println(CasadeEventosDos.getDisponibilidadElFindeSemana());
-        System.out.println(CasadeEventosDos.getTematica());
-        System.out.println(CasadeEventosDos.getNombre());
+        System.out.println("el genero de los baños es:");
+        System.out.println(CasadeEventosUno.getBañoSocial().getGenero());
+        System.out.println("Ha sido limpiado");
+        System.out.println(CasadeEventosUno.getBañoSocial().getServicioDeLimpieza());
     }
 }
